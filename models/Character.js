@@ -1,6 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
-class Charcter extends Model {
+class Character extends Model {
     checkPassword(loginPw) {
         return bcrypt.compareSync(loginPw, this.password);
     }
@@ -33,14 +34,23 @@ Project.init(
         },
         backstory: {
             type: DataTypes.TEXT,
+            allowNull: false,
         },
         abilities_id: {
             type: DataTypes.INTEGER,
+            allowNull: false,
             references: {
                 model: 'abilities',
                 key: 'id',
             },
         },
+        user_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'user',
+                key: 'id'
+            }
+        }
     },
     {
         sequelize,
@@ -50,3 +60,5 @@ Project.init(
         modelName: 'character',
     }
 )
+
+module.exports = Character;
