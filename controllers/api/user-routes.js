@@ -35,6 +35,26 @@ router.post('/login', async (req, res) => {
             return;
         }
 
-        
+        // check user's inputted password to see if its hashed equivalent is in the DB
+        const validPw = await userData.checkPassword(req.body.password);
+
+        // if password is wrong, return a 400 error
+        // for security reasons, website does not specify if it was specifically the email or the password that was incorrect
+        if (!validPw) {
+            res
+                .status(400)
+                .json({ message: 'Sorry, incorrect email or password was entered. Please try again with valid credentials.'} );
+            return;
+        }
+
+        // if both email and password are valid, save the new session as logged in
+        req.session.save(() => {
+            req.session.user_id = userData.id;
+            req.session.logged_in = true;
+
+            res.json({ user: userData, message: 'Successfully logged in!' });
+        });
+    } catch (err) { // returns 400 error if anything else goes wrong 
+        res.status(400).json(err);
     }
-})
+});
