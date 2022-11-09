@@ -58,3 +58,18 @@ router.post('/login', async (req, res) => {
         res.status(400).json(err);
     }
 });
+
+// POST route that enables user to log out
+router.post('/logout', (req, res) => {
+    // if logged_in is set to true, end the session, thus logging out the user
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else { // display 404 error in case something goes wrong somehow
+        req.status(404).end();
+    }
+});
+
+// export the data here for use elsewhere via router
+module.exports = router;
