@@ -25,8 +25,18 @@ router.get('/:id', authorizeUser, async (req, res) => {
         const charData = await Character.findByPk(req.params.id, {
             include: [{ model: Abilities }]
         });
+
+        // if character data doesn't exist, return error
+        if (!charData) {
+            res.status(404).json({ message: 'No character found with this ID!'} );
+        }
+
+        // return status 200 upon successful retrieval
+        res.status(200).json(charData);
+    } catch (err) { // 500 error if something goes wrong server-side
+        res.status(500).json(err);
     }
-})
+});
 
 // POST route that creates new character in Character model
 router.post('/', authorizeUser, async (req, res) => {
