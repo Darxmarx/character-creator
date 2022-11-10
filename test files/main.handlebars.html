@@ -18,6 +18,17 @@
     <div>
         <img src="/public/images/LéGenesis-2.png" alt="Logo" height="200px">
     </div>
+    {{#if logged_in}}
+    <div class="logged-in-card">
+        <button type="button" class="btn btn-dark" id="charactersBtn">
+            Your Characters
+        </button>
+
+        <button type="button" class="btn btn-dark" id="allUsersBtn">
+            All Users
+        </button>
+    </div>
+    {{#else}}
     <div class="login-card">
        
             <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-login-modal">
@@ -100,6 +111,7 @@
             </div>
         </div>
     </div>
+    {{/if}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
