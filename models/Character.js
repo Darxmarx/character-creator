@@ -7,7 +7,7 @@ class Character extends Model {
     }
 }
 
-Project.init(
+Character.init(
     {
         id: {
             type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ Project.init(
             autoIncrement: true,
         },
         name: {
-            type: DataTypes.VARCHAR(50),
+            type: DataTypes.STRING,
             allowNull: false,
         },
         alignment: {

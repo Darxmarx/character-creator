@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { User, Character, Abilities } = require('../models');
 const authorizeUser = require ('../utils/auth');
 
+// TODO: commented out for now, please continue
 // render user's personal profile, which contains all the user's characters
 // router.get('/profile', authorizeUser, async (req, res) => {
 //     try {
@@ -12,3 +13,6 @@ const authorizeUser = require ('../utils/auth');
 //         })
 //     }
 // })
+
+// export data for use elsewhere
+module.exports = router;

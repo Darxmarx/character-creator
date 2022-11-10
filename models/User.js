@@ -7,7 +7,7 @@ class User extends Model {
     }
 }
 
-Project.init(
+User.init(
     {
         id: {
             type: DataTypes.INTEGER,
