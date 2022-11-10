@@ -3,12 +3,47 @@ const router = require('express').Router();
 const { User, Character, Abilities } = require('../../models');
 const authorizeUser = require('../../utils/auth');
 
+// GET route that retrieves all characters
+router.get('/', authorizeUser, async (req, res) => {
+    try {
+        // finds all sets of data in the Character model, making sure to include abilities data from the Abilities model
+        const charData = await Character.findAll({
+            include: [{ model: Abilities }]
+        });
+
+        // return status 200 upon successful retrieval
+        res.status(200).json(charData);
+    } catch (err) { // 500 error if something goes wrong server-side
+        res.status(500).json(err);
+    }
+});
+
+// GET route that retrieves specific character by ID in Character model
+router.get('/:id', authorizeUser, async (req, res) => {
+    try {
+        // finds set of data in Character model by ID, including that character's abilities stored in the Abilities model
+        const charData = await Character.findByPk(req.params.id, {
+            include: [{ model: Abilities }]
+        });
+
+        // if character data doesn't exist, return error
+        if (!charData) {
+            res.status(404).json({ message: 'No character found with this ID!'} );
+        }
+
+        // return status 200 upon successful retrieval
+        res.status(200).json(charData);
+    } catch (err) { // 500 error if something goes wrong server-side
+        res.status(500).json(err);
+    }
+});
+
 // POST route that creates new character in Character model
 router.post('/', authorizeUser, async (req, res) => {
     try {
-        const newChar = await Character.create({
-            // creates new character based on *all* data found within the req.body (all input fields)
+        // creates new character based on *all* data found within the req.body (all input fields)
             // and sets the user_id of the character to match the creator's id
+        const newChar = await Character.create({
             ...req.body,
             user_id: req.session.user_id,
         });
