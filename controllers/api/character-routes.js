@@ -21,7 +21,7 @@ router.post('/', authorizeUser, async (req, res) => {
 });
 
 // PUT route that edits a specific character by ID in Character model
-router.put('/:id', (req, res) => {
+router.put('/:id', async (req, res) => {
     // update character in the DB based on new information in the req.body, with the requested ID in the url
     try {
         const charData = await Character.update(req.body, {
@@ -42,3 +42,29 @@ router.put('/:id', (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// DELETE route that deletes specific character by ID in Character model
+router.delete('/:id', async (req, res) => {
+    // delete a character by its "id" value
+    try {
+        const charData = await Character.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        // return error if character ID doesn't exist
+        if (!charData) {
+            res.status(404).json({ message: 'No character found with this ID!' });
+            return;
+        }
+
+        // return status 200 upon successful update
+        res.status(200).json(charData);
+    } catch (err) { // 500 error if something goes wrong server-side
+        res.status(500).json(err);
+    }
+});
+
+// export functions here for use elsewhere
+module.exports = router;
