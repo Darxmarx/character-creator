@@ -1,12 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>LéGenesis</title>
 </head>
+
 <body>
+    <header class="title">
+        <h1>LéGenesis</h1>
+    </header>
+    <div>
+        <img src="/public/images/LéGenesis-2.png" alt="Logo" height="200px">
+    </div>
+    {{#if logged_in}}
+    <div class="logged-in-card">
+        <button type="button" class="btn btn-dark" id="charactersBtn">
+            Your Characters
+        </button>
+
+        <button type="button" class="btn btn-dark" id="allUsersBtn">
+            All Users
+        </button>
+    </div>
+    {{#else}}
+    <div class="login-card">
+       
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-login-modal">
+                login
+            </button>
+
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-signup-modal">
+                Signup
+            </button>
+
+        <div class="login-modal">
+
+            <div class="modal fade" id="add-login-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="LoginModalLabel">Login</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form id="login-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="login-email">Email</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Email">
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="login-password">Password</label>
+                                        <input type="text" class="form-control" id="password" placeholder="Password">
+                                        <div class="form-row">
+                                            <button type="submit" class="btn btn-primary">Login</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+        </div>
+
+        <div class="signup-modal">
+
+            
+            
+            <div class="modal fade" id="add-signup-modal" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="SignupModalLabel">Sign Up</h5>
+                        </div>
+                        <div class="modal-body">
+                            <form id="signup-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="signup-email">Email</label>
+                                        <input type="text" class="form-control" id="email" placeholder="Email">
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="signup-password">Password</label>
+                                        <input type="text" class="form-control" id="password"
+                                            placeholder="Password">
+                                        <div class="form-row">
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
     
 </body>
+
 </html>
