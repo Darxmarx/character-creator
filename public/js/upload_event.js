@@ -5,7 +5,7 @@ buttonel = document.querySelector('#button');
 // event listener for the upload button
 buttonEl.addEventListener('submit', async () => {
     // todo: might have to change the fetch route
-    const response = await fetch('/controllers/api/signUploadWidget');
+    const response = await fetch('/controllers/api/widget-sign-route');
     const data = await response.json();
 
     const options = {
