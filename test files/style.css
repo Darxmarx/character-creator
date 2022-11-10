@@ -49,3 +49,7 @@ h1 {
     display: block;
     margin-bottom:5px;
 }
+
+.signup-modal {
+    position: absolute;
+}
