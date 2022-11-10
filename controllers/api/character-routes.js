@@ -21,7 +21,7 @@ router.post('/', authorizeUser, async (req, res) => {
 });
 
 // PUT route that edits a specific character by ID in Character model
-router.put('/:id', async (req, res) => {
+router.put('/:id', authorizeUser, async (req, res) => {
     // update character in the DB based on new information in the req.body, with the requested ID in the url
     try {
         const charData = await Character.update(req.body, {
@@ -44,7 +44,7 @@ router.put('/:id', async (req, res) => {
 });
 
 // DELETE route that deletes specific character by ID in Character model
-router.delete('/:id', async (req, res) => {
+router.delete('/:id', authorizeUser, async (req, res) => {
     // delete a character by its "id" value
     try {
         const charData = await Character.destroy({
