@@ -20,16 +20,32 @@ h1 {
     background-color: var(--gray);
 }
 
-button {
-    background-color: var(--white);
+.login-card {
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
+  border: 3px solid darkgray;
+  padding: 10px;
+  flex: 0 0 300px;
+  background-color: var(--gray);
+  margin: 20px;
+}
+
+.buttons {
+    background-color: var(--gray);
     width: 80px;
     height: 15px;
     padding: 25px;
-    display: block;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.container {
-    background-color: var(--black);
-    width: 100%;
+.buttons button {
+    display: block;
+    margin-bottom:5px;
 }
