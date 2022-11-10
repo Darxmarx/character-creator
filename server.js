@@ -7,8 +7,14 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 
+// todo: change helpers later on
+const helpers = require('./utils/auth');
+
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Set up Handlebars.js engine with custom helpers
+const hbs = exphbs.create({ helpers });
 
 const sess = {
     secret: 'Super secret secret',
