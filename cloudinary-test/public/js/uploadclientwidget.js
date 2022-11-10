@@ -1,6 +1,6 @@
-const buttonEl = document.querySelector('#upload_widget');
+const buttonEl = document.getElementById('upload_widget');
 
-buttonEl.addEventListener('submit', async () => {
+buttonEl.addEventListener('click', async () => {
     console.log('button pressed')
     const response = await fetch('/api/signuploadwidget');
     const data = await response.json();
