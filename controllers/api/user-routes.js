@@ -15,8 +15,8 @@ router.post('/', async (req, res) => {
 
             res.status(200).json(userData); // sets up new user data as a JSON object
         });
-    } catch (err) { // if user enters invalid credentials, returns 400 error
-        res.status(400).json(err);
+    } catch (err) { // 500 error in case anything goes wrong server-side
+        res.status(500).json(err);
     }
 });
 
@@ -54,8 +54,8 @@ router.post('/login', async (req, res) => {
 
             res.json({ user: userData, message: 'Successfully logged in!' });
         });
-    } catch (err) { // returns 400 error if anything else goes wrong 
-        res.status(400).json(err);
+    } catch (err) { // returns 500 error if anything else goes wrong 
+        res.status(500).json(err);
     }
 });
 
@@ -66,8 +66,8 @@ router.post('/logout', (req, res) => {
         req.session.destroy(() => {
             res.status(204).end();
         });
-    } else { // display 404 error in case something goes wrong somehow
-        req.status(404).end();
+    } else { // display 500 error in case something goes wrong somehow
+        req.status(500).end();
     }
 });
 
