@@ -13,8 +13,32 @@ router.post('/', authorizeUser, async (req, res) => {
             user_id: req.session.user_id,
         });
 
+        // return status 200 upon successful creation
         res.status(200).json(newChar);
-    } catch (err) { // if user fails to properly fill in character data, return 400 error
-        res.status(400).json(err);
+    } catch (err) { // 500 error if something goes wrong server-side
+        res.status(500).json(err);
+    }
+});
+
+// PUT route that edits a specific character by ID in Character model
+router.put('/:id', (req, res) => {
+    // update character in the DB based on new information in the req.body, with the requested ID in the url
+    try {
+        const charData = await Character.update(req.body, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+        // if character doesn't exist somehow, return error
+        if (!charData) {
+            res.status(404).json({ message: 'No character found with this ID!' });
+            return;
+        }
+
+        // return status 200 upon successful update
+        res.status(200).json(charData);
+    } catch (err) { // 500 error if something goes wrong server-side
+        res.status(500).json(err);
     }
 });
