@@ -4,7 +4,7 @@ const { User, Character, Abilities } = require('../../models');
 const authorizeUser = require('../../utils/auth');
 
 // GET route that retrieves all characters
-router.get('/', (req, res) => {
+router.get('/', authorizeUser, async (req, res) => {
     try {
         // finds all sets of data in the Character model, making sure to include abilities data from the Abilities model
         const charData = await Character.findAll({
@@ -17,6 +17,16 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
     }
 });
+
+// GET route that retrieves specific character by ID in Character model
+router.get('/:id', authorizeUser, async (req, res) => {
+    try {
+        // finds set of data in Character model by ID, including that character's abilities stored in the Abilities model
+        const charData = await Character.findByPk(req.params.id, {
+            include: [{ model: Abilities }]
+        });
+    }
+})
 
 // POST route that creates new character in Character model
 router.post('/', authorizeUser, async (req, res) => {
