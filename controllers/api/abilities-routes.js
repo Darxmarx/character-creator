@@ -2,16 +2,26 @@ const router = require('express').Router();
 const { User, Character, Abilities } = require('../../models');
 const authorizeUser = require('../../utils/auth');
 
-
-router.post('/', authorizeUser, async (req, res) => {
+// get all abilities associated with a character
+router.get('/:character_id', async (req, res) => {
     try {
+        const abilitiesData = await Abilities.findAll({
+            where: {
+                character_id: req.params.character_id,
+            }
+        });
 
-
-        // return status 200 upon successful creation
-        res.status(200).json(newChar);
-    } catch (err) { // 500 error if something goes wrong server-side
+        if(!abilitiesData) {
+            res.status(404).json({message: 'no abilities found for that character_id'});
+            return;
+        }
+    } catch (err) {
         res.status(500).json(err);
     }
+});
+
+router.post('/', authorizeUser, async (req, res) => {
+
 });
 
 module.exports = router;
