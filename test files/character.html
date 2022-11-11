@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <title>LéGenesis</title>
+</head>
+<body>
+    <header class="navbar title ">
+        <h1 d-flex justify-content-start>LéGenesis</h1>
+    <div class="d-flex justify-content-end pr-2">
+        <button type="button" class="btn btn-light" id="userDshBtn">User Dashboard</button>
+        <button type="button" class="btn btn-light" id="logoutBtn">logout</button>
+    </div>
+    </header>
+    <div class="view-characters">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <h3 class="text-white">Character name</h3>
+                <img src="/public/images/placeholder.png" class="d-block w-100" alt="placeholder">
+                <p class="text-white"></p>
+              </div>
+              <div class="carousel-item">
+                <h3 class="text-white">Character name</h3>
+                <img src="/public/images/placeholder.png" class="d-block w-100" alt="placeholder">
+                <p class="text-white">Character Description</p>
+              </div>
+              <div class="carousel-item">
+                <h3 class="text-white">Logo Example</h3>
+                <img src="/public/images/LéGenesis-2.png" class="d-block w-100" alt="logo">
+                <p class="text-white">Description placeholder</p>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
