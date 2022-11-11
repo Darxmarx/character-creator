@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', async () => {
         uploadSignatureTimestamp: data.timestamp,
         uploadSignature: data.signature,
         cropping: false,
-        folder: 'signed_upload_demo_uw'
+        folder: 'signed_uploads'
       }
 
+    console.log(`@@@@@@@@@@@@@@@@@@@@${JSON.stringify(options)}@@@@@@@@@@@@@@@@@@@@@@@@`)
 
     // function for the window to create an uplaod widget
     const uploadWidget = window.cloudinary.createUploadWidget(options, (error, result) => {
@@ -31,7 +32,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     })
 
     document.getElementById('upload_widget').addEventListener('click', () => {
-        uploadWidget.open();
+        uploadWidget.open()
     }, false);
 
 })
