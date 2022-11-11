@@ -22,6 +22,7 @@ router.get('/:character_id', async (req, res) => {
     }
 });
 
+// creates an ability using the character_id as a parameter
 router.post('/:character_id/', async (req, res) => {
     try {
         const abilityData = await Abilities.create({
@@ -41,5 +42,26 @@ router.post('/:character_id/', async (req, res) => {
         res.status(500).json(err)
     }
 });
+
+// edit a characters ability using character_id and ability_id as parameters
+router.put('/:character_id/:ability_id', async (req, res) => {
+    try {
+        const updatedAbility = await Abilities.findOne({
+            where: {
+                character_id: req.params.character_id,
+                id: req.params.ability_id
+            }
+        });
+
+        if(!updatedAbility) {
+            res.status(400).json({messge: 'Could not find and update specific ability'})
+            return;
+        }
+
+        res.status(200).json(updatedAbility);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+}) 
 
 module.exports = router;
