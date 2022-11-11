@@ -15,6 +15,10 @@ Abilities.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
+        ability_desc: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
         character_id: {
             type: DataTypes.INTEGER,
             references: {
