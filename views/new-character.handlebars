@@ -1,13 +1,26 @@
+{{!-- *** TODO: link to character name input/ public js file--}}
+<label for="character-name" class="form-lable">Character Name: </label>
+
+
 {{!-- *** TODO: upload image for character, need link with cloudinary and adjust html layout--}}
-<div class="input-group mb-3">
-  <div class="input-group-prepend">
-    <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Upload</button>
-  </div>
-  <div class="custom-file">
-    <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-    <label class="custom-file-label" for="inputGroupFile03">Choose image</label>
+<div class="card" style="width: 18rem;">
+    {{!-- *** TODO: preview character image, need link --}}
+  <img src="TODO" class="card-img-top" alt="character-image-preview">
+  <div class="card-body">
+    {{!-- upload label and button --}}
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Upload</button>
+        </div>
+        <div class="custom-file">
+            <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
+            <label class="custom-file-label" for="inputGroupFile03">Choose image</label>
+        </div>
+        </div>
+
   </div>
 </div>
+
 
 {{!-- dropdown menu for alignment --}}
 <label for="alignments">Choose a alignment:</label>
@@ -20,6 +33,27 @@
     <option value="alignment5">alignment5</option>
 </select>
 
+
 {{!-- *** TODO :abilities --}}
 
-{{!--  textarea for Character description/backstory  --}}
+
+
+{{!--  *** TODO : textarea for Character description/backstory, combine?  --}}
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">physical_descbription</span>
+  </div>
+  <textarea class="form-control" aria-label="physical_descbription"></textarea>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">backstory</span>
+  </div>
+  <textarea class="form-control" aria-label="backstory"></textarea>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">personality</span>
+  </div>
+  <textarea class="form-control" aria-label="personality"></textarea>
+</div>
