@@ -1,4 +1,4 @@
-const { Router } = require('express');
+// const { Router } = require('express');
 const express = require('express');
 const router = express.Router();
 const signature = require('../../utils/signatureWidget');
@@ -7,6 +7,9 @@ require('../../public/js/cloudinary_config');
 const cloudinary = require('cloudinary').v2;
 const cloudName = cloudinary.config().cloud_name;
 const apiKey = cloudinary.config().api_key;
+
+console.log(`@@@@@@@@@@@@@@@@@@@@${cloudName}@@@@@@@@@@@@@@@@@@@@@@@@`)
+console.log(`@@@@@@@@@@@@@@@@@@@@${apiKey}@@@@@@@@@@@@@@@@@@@@@@@@`)
 
 // using this API should require authentication
 router.get('/', (req, res, next) => {

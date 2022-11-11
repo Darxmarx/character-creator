@@ -3,10 +3,14 @@
 buttonel = document.querySelector('#button');
 
 // event listener for the upload button
-buttonEl.addEventListener('submit', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // todo: might have to change the fetch route
-    const response = await fetch('/controllers/api/widget-sign-route');
+    const response = await fetch('/api/signuploadwidgetRouter');
     const data = await response.json();
+
+    console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@')
+    console.log(JSON.stringify(data));
+    console.log(data);
 
     const options = {
         cloudName: data.cloudname,
@@ -19,6 +23,7 @@ buttonEl.addEventListener('submit', async () => {
 
     // function for the window to create an uplaod widget
     const uploadWidget = window.cloudinary.createUploadWidget(options, (err, result) => {
+        console.log()
         if(!err && result && result.event === 'success') {
             console.log(result);
 
