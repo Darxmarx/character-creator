@@ -1,4 +1,5 @@
 const cloudinary = require('cloudinary').v2;
+require('dotenv').config();
 
 // configure the cloud name, api key and api secret
 const myconfig = cloudinary.config({
