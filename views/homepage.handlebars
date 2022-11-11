@@ -1,0 +1,9 @@
+{{!-- loop over each User in the user array, show user's name in each card --}}
+{{#each user as |user| }}
+<div class="card">
+  <div class="card-body">
+    {{user.name}}
+  </div>
+</div>
+<br>
+{{/each}}
