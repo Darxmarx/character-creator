@@ -62,6 +62,28 @@ router.put('/:character_id/:ability_id', async (req, res) => {
     } catch (err) {
         res.status(500).json(err);
     }
+});
+
+// delete specific ability using character_id, and ability_id as parameters
+router.delete('/:character_id/:ability_id', async (req, res) => {
+    try {
+        const deleteAbility = await Abilities.findOne({
+            where: {
+                character_id: req.params.character_id,
+                id: req.params.ability_id
+            }
+        });
+
+        if(!deleteAbility) {
+            res.status(400).json({message: 'Could not find ability to delete'})
+            return;
+        }
+
+        res.status(200).json(deleteAbility);
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
 }) 
 
 module.exports = router;
