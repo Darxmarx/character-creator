@@ -11,7 +11,7 @@ const apiKey = cloudinary.config().api_key;
 
 
 // using this API should require authentication
-router.get('/', (req, res, next) => {
+router.get('/',  (req, res, next) => {
     const uploadSignature = signature.signUploadWidget()
     console.log(`uploadsignature@@@@@@@@@@@@@@@@@@@@${JSON.stringify(uploadSignature)}@@@@@@@@@@@@@@@@@@@@@@@@`)
     res.json({

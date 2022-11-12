@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const createError = require('http-errors');
 
-const signuploadwidgetRouter = require('./controllers/api/widget-sign-route');
+// const signuploadwidgetRouter = require('./controllers/api/widget-sign-route');
 
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
@@ -20,7 +20,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.static('public'))
 
 // upload signing using api
-app.use('/api/signuploadwidgetRouter', signuploadwidgetRouter);
+// app.use('/api/signuploadwidgetRouter', signuploadwidgetRouter);
 
 app.use((req, res, next) => {
     next(createError(404))
