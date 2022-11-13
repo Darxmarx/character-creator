@@ -33,7 +33,9 @@
   {{!-- *** TODO: button group to add/edit/delete character only shows on user's own characters --}}
   {{!-- *** TODO: complete href link --}}
 <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary" href="">Add Charater</button>
-  <button type="button" class="btn btn-secondary" href="">Edit Charater</button>
-  <button type="button" class="btn btn-secondary" href="">Delete Charater</button>
+  <button type="button" class="btn btn-secondary" href="#">Add Charater</button>
+  <button data-editId="{{character.id}}" type="button" class="btn btn-secondary" href="#" id="edit-character">Edit Charater</button>
+  <button data-deleteId="{{character.id}}" type="button" class="btn btn-secondary" href="#" id="delete-character">Delete Charater</button>
 </div>
+
+{{!-- todo: this add character and next page save character same? --}}
