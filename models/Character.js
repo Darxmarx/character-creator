@@ -26,7 +26,7 @@ Character.init(
         personality: {
             type: DataTypes.STRING,
         },
-        physical_descbription: {
+        physical_description: {
             type: DataTypes.TEXT,
         },
         image: {

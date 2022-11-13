@@ -1,11 +1,8 @@
-// todo: the event listener for the upload button
-
-buttonel = document.querySelector('#button');
 
 // event listener for the upload button
-buttonEl.addEventListener('submit', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     // todo: might have to change the fetch route
-    const response = await fetch('/controllers/api/widget-sign-route');
+    const response = await fetch('/api/widget');
     const data = await response.json();
 
     const options = {
@@ -14,18 +11,27 @@ buttonEl.addEventListener('submit', async () => {
         uploadSignatureTimestamp: data.timestamp,
         uploadSignature: data.signature,
         cropping: false,
-        folder: 'signed_uploads'
-    }
+        folder: 'signed_upload_demo_uw'
+      }
 
-    // function for the window to create an uplaod widget
-    const uploadWidget = window.cloudinary.createUploadWidget(options, (err, result) => {
-        if(!err && result && result.event === 'success') {
-            console.log(result);
+    console.log(`@@@@@@@@@@@@@@@@@@@@${JSON.stringify(options)}@@@@@@@@@@@@@@@@@@@@@@@@`)
 
-            var resultString = JSON.stringify(result, null, 4);
-            document.getElementById('uwdata').innerHTML += resultString;
+
+    const processResults = (error, result) => {
+        if (!error && result && result.event === 'success') {
+          console.log(result)
+          
+          var str = JSON.stringify(result, null, 4);
+          document.getElementById("uwdata").innerHTML += str;
         }
-    })
+      }
+    
+      const myWidget = window.cloudinary.createUploadWidget(
+        options,
+        processResults
+      )
+      document
+        .getElementById('upload_widget')
+        .addEventListener('click', () => myWidget.open(), false)
 
-    document.getElementById('upload_widget').addEventListener('click', () => uploadWidget.open(), false);
 })
