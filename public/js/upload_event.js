@@ -1,8 +1,4 @@
 
-// todo: the event listener for the upload button
-
-// buttonel = document.querySelector('#button');
-
 // event listener for the upload button
 document.addEventListener('DOMContentLoaded', async () => {
     // todo: might have to change the fetch route
@@ -37,22 +33,5 @@ document.addEventListener('DOMContentLoaded', async () => {
       document
         .getElementById('upload_widget')
         .addEventListener('click', () => myWidget.open(), false)
-
-
-
-    // function for the window to create an uplaod widget
-    // const uploadWidget = window.cloudinary.createUploadWidget(options, (error, result) => {
-
-    //     if (!error && result && result.event === 'success') {
-    //         console.log(result)
-
-    //         var str = JSON.stringify(result, null, 4);
-    //         document.getElementById("uwdata").innerHTML += str;
-    //     }
-    // })
-
-    // document.getElementById('#upload_widget').addEventListener('click', () => {
-    //     uploadWidget.open()
-    // }, false);
 
 })
