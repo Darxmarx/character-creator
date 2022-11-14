@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         folder: 'signed_upload_demo_uw'
       }
 
-    console.log(`@@@@@@@@@@@@@@@@@@@@${JSON.stringify(options)}@@@@@@@@@@@@@@@@@@@@@@@@`)
+
 
 
     const processResults = (error, result) => {

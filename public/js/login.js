@@ -3,7 +3,7 @@
 const loginFormHandler = async (e) => {
     e.preventDefault();
 
-    console.log('@@@@@@@@@@@login presesd')
+
     // collect values from the login form
     const email = $("#email-login").val().trim();
     const password = $("#password-login").val().trim();

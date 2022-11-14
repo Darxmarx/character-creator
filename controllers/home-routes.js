@@ -30,10 +30,14 @@ router.get('/', authorizeUser, async (req, res) => {
 
         console.log(user);
 
-        res.render('new-character', {
-            users,
-            logged_in: req.session.logged_in,
-        })
+        // res.render('users', {
+        //     users,
+        //     logged_in: req.session.logged_in,
+        // })
+
+        // when the user logs in we want them to be able to see the characters they made
+        // res.render('users')
+        res.redirect('/user')
     } catch(err) {
         res.status(500).json(err);
     }
@@ -50,8 +54,14 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/characters', (req, res) => {
-    res.render('users');
+    res.render('new-character');
 })
+
+router.get('/user', (req, res) => {
+    res.render('users')
+})
+
+
 
 // export data for use elsewhere
 module.exports = router;
