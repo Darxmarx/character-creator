@@ -1,0 +1,61 @@
+:root {
+    --black: black;
+    --white: white;
+    --gray: gray;
+    --red: red;
+}
+
+*{
+    /* background-color: var(--black); */
+}
+
+.title {
+    color: var(--white);
+    background-color: var(--gray);
+    padding: 20px;
+    text-align: center;
+}
+
+
+#character-container{
+    background-color: white;
+    color: back;
+}
+
+h1 {
+    background-color: var(--gray);
+}
+
+.login-card {
+  border-style: solid;
+  border-width: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
+  border: 3px solid darkgray;
+  padding: 10px;
+  flex: 0 0 300px;
+  background-color: var(--gray);
+  margin: 20px;
+}
+
+.buttons {
+    background-color: var(--gray);
+    width: 80px;
+    height: 15px;
+    padding: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button {
+    display: block;
+    margin-bottom:5px;
+}
+
+.signup-modal {
+    position: absolute;
+}

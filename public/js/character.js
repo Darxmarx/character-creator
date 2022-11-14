@@ -22,7 +22,7 @@ const newCharacterHandler = async (e) => {
         });
 
         if(response.ok) {
-            document.location.replace('/character');
+            document.location.replace('/characters');
         } else {
             alert('Failed to Create New Character!');
         }
@@ -52,7 +52,7 @@ const editCharacterHandler = async (e) => {
     });
     console.log(response)
     if(response.ok) {
-        document.location.replace('/character');
+        document.location.replace('/characters');
     } else {
         alert('Edit Failed!');
     }
@@ -76,6 +76,11 @@ const delCharacterHandler = async (e) => {
         }
     }
 };
+
+const getAllCharacterHandler = async (e) => {
+    
+}
+
 
 
 $('#save-character').on('click', newCharacterHandler);

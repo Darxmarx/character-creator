@@ -1,0 +1,63 @@
+{{!-- main character page img display function --}}
+<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+  <div>
+    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+  </div>
+  {{!-- if character is not empty, loop through each character image's link --}}
+  <div class="container" id="character-container">
+    {{#if characterList.length}}
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-interval="10000">
+        {{#each characterList as |character|}}
+        {{!-- *** TODO: this link might need to change based on img link --}}
+        <label for="character-name">Charater name: {{character.name}}</label>
+        <img src="/api/character/{{character.id}}" class="d-block w-100" alt="character-image">
+        {{!-- show character's description *** TODO: do we need all these info to display under character's img --}}
+        <label for="character-description">description:</label>
+        {{!-- <textarea class="form-input" id="character-description" name="character-description">
+
+      Alignment: {{character.alignment}}
+      Personality: {{character.personality}}
+      Physical: {{character.physical_descbription}}
+      Back Story: {{character.backstory}}
+      Abilities: {{#each character.abilities as |abilities|}}
+        {{abilities.name}}
+      {{/each}}
+      </textarea> --}}
+        <p>Alignment: {{character.alignment}}</p>
+        <p>Personality: {{character.personality}}</p>
+        <p>Physical: {{character.physical_description}}</p>
+        <p>Back Story: {{character.backstory}}</p>
+        <p>Abilities: {{#each character.abilities as |abilities|}}
+          {{abilities.name}}
+          {{/each}}</p>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+    {{!-- slide imgs left and right with previous and next arrow--}}
+
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <a class="btn btn-secondary" href="/characters">Add Character</a>
+      <button data-editId="{{character.id}}" type="button" class="btn btn-secondary" id="edit-character">Edit
+        Charater</button>
+      <button data-deleteId="{{character.id}}" type="button" class="btn btn-secondary" href="#"
+        id="delete-character">Delete Charater</button>
+    </div>
+  </div>
+  <div>
+    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+  {{!-- *** TODO: button group to add/edit/delete character only shows on user's own characters --}}
+  {{!-- *** TODO: complete href link --}}
+
+
+</div>
+{{!-- todo: this add character and next page save character same? --}}

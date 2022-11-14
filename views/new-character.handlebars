@@ -1,5 +1,6 @@
 
-<input for="character-name" class="form-lable" id="characterName">Character Name: </input>
+<label for="character-name">Character Name: </label>
+<input for="character-name" class="form-lable" id="characterName"></input>
 
 
 {{!-- *** TODO: upload image for character, need link with cloudinary and adjust html layout--}}
@@ -8,15 +9,19 @@
   <img src="TODO" class="card-img-top" alt="character-image-preview">
   <div class="card-body">
     {{!-- upload label and button --}}
-        <div class="input-group mb-3">
+    <div>
+        <button id="upload_widget">upload image</button>
+    </div>
+    <div><img id="uploadedimage" /></div>
+        {{!-- <div class="input-group mb-3">
         <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Upload</button>
+            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03 upload_widget">Upload</button>
         </div>
         <div class="custom-file">
             <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
             <label class="custom-file-label" for="inputGroupFile03">Choose image</label>
         </div>
-        </div>
+        </div> --}}
 
   </div>
 </div>
@@ -26,11 +31,16 @@
 <label for="alignments">Choose a alignment:</label>
 
 <select name="alignments" id="alignments">
-    <option value="alignment1">alignment1</option>
-    <option value="alignment2">alignment2</option>
-    <option value="alignment3">alignment3</option>
-    <option value="alignment4">alignment4</option>
-    <option value="alignment5">alignment5</option>
+    <option value="alignment1">True Neutral</option>
+    <option value="alignment2">Chaotic Neutral</option>
+    <option value="alignment3">Lawful Neutral</option>
+    <option value="alignment4">Lawful Good</option>
+    <option value="alignment5">Lawful Evil</option>
+    <option value="alignment6">Chaotic Good</option>
+    <option value="alignment7">Chaotic Evil</option>
+    <option value="alignment8">Chaotic Neutral</option>
+    <option value="alignment9">Neutral Good</option>
+
 </select>
 
 
@@ -57,7 +67,25 @@
   </div>
   <textarea class="form-control" aria-label="personality" id="personality"></textarea>
 </div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Abilities</span>
+    <button >Add another Ability</button>
+  </div>
+  <textarea class="form-control" aria-label="abilities" id="abilities"></textarea>
+</div>
 
+
+
+{{!-- 
+
+for(i = 0, i < abilities.length){
+  render a text area of 
+}
+
+
+ --}}
 
 {{!-- *** TODO : save button, need to link to public --}}
 <button type="button" class="btn btn-secondary btn-lg btn-block" id="save-character">Save Character</button>
+

@@ -30,20 +30,20 @@ Character.init(
             type: DataTypes.TEXT,
         },
         image: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
         },
         backstory: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        abilities_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'abilities',
-                key: 'id',
-            },
-        },
+        // abilities_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'abilities',
+        //         key: 'id',
+        //     },
+        // },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
