@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', async () => {
       console.log(result.info.secure_url)
 
       document.getElementById("uploadedimage").setAttribute("src", result.info.secure_url);
-      var str = JSON.stringify(result, null, 4);
-      document.getElementById("uwdata").innerHTML += str;
+      // var str = JSON.stringify(result, null, 4);
+      // document.getElementById("uwdata").innerHTML += str;
     }
   }
 

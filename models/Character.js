@@ -25,12 +25,15 @@ Character.init(
         },
         personality: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
         physical_description: {
             type: DataTypes.TEXT,
+            allowNull: false,
         },
         image: {
             type: DataTypes.TEXT,
+            allowNull: false,
         },
         backstory: {
             type: DataTypes.TEXT,
