@@ -1,5 +1,6 @@
 
-<input for="character-name" class="form-lable" id="characterName">Character Name: </input>
+<label for="character-name">Character Name: </label>
+<input for="character-name" class="form-lable" id="characterName"></input>
 
 
 {{!-- *** TODO: upload image for character, need link with cloudinary and adjust html layout--}}
@@ -66,7 +67,24 @@
   </div>
   <textarea class="form-control" aria-label="personality" id="personality"></textarea>
 </div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Abilities</span>
+    <button >Add another Ability</button>
+  </div>
+  <textarea class="form-control" aria-label="abilities" id="abilities"></textarea>
+</div>
 
+
+
+{{!-- 
+
+for(i = 0, i < abilities.length){
+  render a text area of 
+}
+
+
+ --}}
 
 {{!-- *** TODO : save button, need to link to public --}}
 <button type="button" class="btn btn-secondary btn-lg btn-block" id="save-character">Save Character</button>
