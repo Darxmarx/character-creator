@@ -1,21 +1,24 @@
 {{!-- main character page img display function --}}
 <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
   {{!-- if character is not empty, loop through each character image's link --}}
-  {{#if character.length}}
+  {{#if characterList.length}}
   <div class="carousel-inner">
     <div class="carousel-item active" data-interval="10000">
-      {{#each character}}
+      {{#each characterList as |character|}}
       {{!-- *** TODO: this link might need to change based on img link --}}
       <label for="character-name">Charater name: {{character.name}}</label>
       <img src="/api/character/{{character.id}}" class="d-block w-100" alt="character-image">
       {{!-- show character's description *** TODO: do we need all these info to display under character's img --}}
       <label for="character-description">description:</label>
       <textarea class="form-input" id="character-description" name="character-description">
-      Aligmeng: {{character.alignment}} <br>
-      Personality: {{character.personality}} <br>
-      Physical: {{character.physical_descbription}} <br>
-      Back Story: {{character.backstory}} <br>
-      Abilities: {{abilities.name}}
+
+      Alignment: {{character.alignment}}
+      Personality: {{character.personality}}
+      Physical: {{character.physical_descbription}}
+      Back Story: {{character.backstory}}
+      Abilities: {{#each character.abilities as |abilities|}}
+        {{abilities.name}}
+      {{/each}}
       </textarea>
       {{/each}}
     </div>

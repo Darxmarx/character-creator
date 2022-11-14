@@ -77,6 +77,10 @@ const delCharacterHandler = async (e) => {
     }
 };
 
+const getAllCharacterHandler = async (e) => {
+    
+}
+
 
 $('#save-character').on('click', newCharacterHandler);
 $('#edit-character').on('click', editCharacterHandler);

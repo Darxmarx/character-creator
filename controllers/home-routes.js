@@ -67,7 +67,7 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/characters', (req, res) => {
-    res.render('new-character');
+    res.render('users');
 })
 
 router.get('/user', (req, res) => {
@@ -97,6 +97,32 @@ router.get('/user_list', async (req, res) => {
 
     } catch (err) {
         res.status(500).json(err);
+    }
+})
+
+router.get('/user/:user_id/characters', async (req, res) => {
+    try {
+        const userCharacters = await Character.findAll({
+            where: {
+                user_id: req.params.user_id
+            },
+            include: [
+                {
+                    model: Abilities
+                }
+            ]
+        })
+
+
+        const characterList = userCharacters.map((character) => character.get({ plain: true }));
+
+        res.render('users-characters', {
+            characterList,
+            logged_in: true
+        })
+
+    } catch(err) {
+
     }
 })
 
