@@ -60,14 +60,54 @@
   <textarea class="form-control" aria-label="personality" id="personality"
     placeholder="Add in details about the character's personality here."></textarea>
 </div>
-<div class="input-group">
+
+{{!-- <div class="input-group" id="abilities-container">
   <div class="input-group-prepend">
     <span class="input-group-text">Abilities</span>
-    <button>Add another Ability</button>
   </div>
   <textarea class="form-control" aria-label="abilities" id="abilities"
     placeholder="List a single ability here."></textarea>
+
+</div> --}}
+
+<div id="abilities-container"></div>
+
+<div class="ability-modal">
+  <div class="modal fade" id="add-ability-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AbilityModalLabel">New Ability</h5>
+        </div>
+        <div class="modal-body">
+          <form id="ability-form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ability-name">Ability Name</label>
+                <input type="text" class="form-control" id="name-ability" placeholder="Ability Name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ability-description">Ability Description</label>
+                <input type="text" class="form-control" id="description-ability" placeholder="Ability's Description">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <button type="button" class="btn btn-primary" id="save-ability-button" data-dismiss="modal">Save</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<button type="button" class="btn" data-toggle="modal" data-target="#add-ability-modal" id="new-ability-btn">Add another Ability</button>
 
 
 
