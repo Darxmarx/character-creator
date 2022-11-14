@@ -67,7 +67,7 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/characters', (req, res) => {
-    res.render('users');
+    res.render('new-character');
 })
 
 router.get('/user', (req, res) => {

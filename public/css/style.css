@@ -16,6 +16,12 @@
     text-align: center;
 }
 
+
+#character-container{
+    background-color: white;
+    color: back;
+}
+
 h1 {
     background-color: var(--gray);
 }
