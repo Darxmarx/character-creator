@@ -5,8 +5,8 @@
     --red: red;
 }
 
- *{
-    background-color: var(--black);
+*{
+    /* background-color: var(--black); */
 }
 
 .title {
