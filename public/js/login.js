@@ -18,7 +18,7 @@ const loginFormHandler = async (e) => {
 
         if(response.ok) {
             // if successful, redirect the browser to the homepage
-            document.location.replace('/characters');
+            document.location.replace('/user_list');
         } else {
             alert(`Failed to login, please try again!`,response.statusText);
         }
@@ -45,7 +45,7 @@ const signupFormHandler = async (e) => {
 
         if(response.ok) {
             // if successful, redirect the browser to homepage
-            document.location.replace('/');
+            document.location.replace('/user_list');
         } else {
             alert(`Please enter correct info to sign up!`, response.statusText);
         }
@@ -53,4 +53,4 @@ const signupFormHandler = async (e) => {
 };
 
 $('#login_button').on('click', loginFormHandler);
-$('.signup-form').on('submit', signupFormHandler);
+$('#signup_button').on('click', signupFormHandler);
