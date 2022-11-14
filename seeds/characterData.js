@@ -1,3 +1,6 @@
+const {Character} = require('../models');
+const characterData =
+
 [
     {
      "name": "spiderman",
@@ -11,3 +14,6 @@
     }
 ]
   
+const seedCharacter = () => Character.bulkCreate(characterData);
+
+module.exports = seedCharacter;

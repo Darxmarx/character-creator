@@ -1,3 +1,5 @@
+const {Abilities} = require('../models');
+const abilitiesData =
 [
     {
         "name": "spider sense",
@@ -15,3 +17,7 @@
         "character_id": 1
     }
 ]
+
+const seedAbilities = () => Abilities.bulkCreate(abilitiesData);
+
+module.exports = seedAbilities
