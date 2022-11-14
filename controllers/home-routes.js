@@ -14,7 +14,7 @@ const authorizeUser = require ('../utils/auth');
 //     }
 // })
 
-router.get('/', async (req, res) => {
+router.get('/', authorizeUser, async (req, res) => {
     try {
         
         
@@ -27,15 +27,34 @@ router.get('/', async (req, res) => {
         })
 
 
+        console.log('@@@@@@@@@@@@@@@@@')
+        console.log(userData)
+
         const users = userData.map((user) => user.get({plain: true}));
 
-        res.render('main', {
+        console.log(user);
+
+        res.render('new-character', {
             users,
             logged_in: req.session.logged_in,
         })
     } catch(err) {
         res.status(500).json(err);
     }
+})
+
+
+router.get('/login', (req, res) => {
+    if (req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('login')
+})
+
+router.get('/characters', (req, res) => {
+    res.render('new-character');
 })
 
 // export data for use elsewhere

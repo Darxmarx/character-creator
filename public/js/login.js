@@ -3,9 +3,10 @@
 const loginFormHandler = async (e) => {
     e.preventDefault();
 
+    console.log('@@@@@@@@@@@login presesd')
     // collect values from the login form
     const email = $("#email-login").val().trim();
-    const password = $("password-login").val().trim();
+    const password = $("#password-login").val().trim();
 
     if(email && password) {
         // send a POST request to the API endpoint
@@ -17,7 +18,7 @@ const loginFormHandler = async (e) => {
 
         if(response.ok) {
             // if successful, redirect the browser to the homepage
-            document.location.replace('/');
+            document.location.replace('/characters');
         } else {
             alert(`Failed to login, please try again!`,response.statusText);
         }
