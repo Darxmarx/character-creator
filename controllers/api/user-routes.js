@@ -23,8 +23,10 @@ router.post('/', async (req, res) => {
 // POST route for existing user to login
 router.post('/login', async (req, res) => {
     try {
+        console.log('@@@@@@@@@@@@login route')
         // user data is searched for within the database
         const userData = await User.findOne({ where: { email: req.body.email } });
+        console.log(JSON.stringify(userData));
 
         // if user's email is not found within the DB, return a 400 error
         // for security reasons, website does not specify if it was specifically the email or the password that was incorrect
@@ -37,6 +39,8 @@ router.post('/login', async (req, res) => {
 
         // check user's inputted password to see if its hashed equivalent is in the DB
         const validPw = await userData.checkPassword(req.body.password);
+
+        console.log(validPw);
 
         // if password is wrong, return a 400 error
         // for security reasons, website does not specify if it was specifically the email or the password that was incorrect

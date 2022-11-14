@@ -5,11 +5,14 @@ const userData =
     {
       "name": "peter",
       "email": "peter@hotmail.com",
-      "password": "password12345"
+      "password": "password"
     }
   ]
   
     
-const seedUser = () => User.bulkCreate(userData);
+const seedUser = () => User.bulkCreate(userData, {
+  individualHooks: true,
+  returning: true,
+});
 
 module.exports = seedUser;

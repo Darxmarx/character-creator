@@ -26,10 +26,6 @@ router.get('/', authorizeUser, async (req, res) => {
             ]
         })
 
-
-        console.log('@@@@@@@@@@@@@@@@@')
-        console.log(userData)
-
         const users = userData.map((user) => user.get({plain: true}));
 
         console.log(user);
@@ -54,7 +50,7 @@ router.get('/login', (req, res) => {
 })
 
 router.get('/characters', (req, res) => {
-    res.render('new-character');
+    res.render('users');
 })
 
 // export data for use elsewhere

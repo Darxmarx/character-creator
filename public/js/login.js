@@ -52,5 +52,5 @@ const signupFormHandler = async (e) => {
     }
 };
 
-$('.login-form').on('submit', loginFormHandler);
+$('#login_button').on('click', loginFormHandler);
 $('.signup-form').on('submit', signupFormHandler);
