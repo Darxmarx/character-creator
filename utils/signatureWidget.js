@@ -11,11 +11,12 @@ const signUploadWidget = () => {
     const signature = cloudinary.utils.api_sign_request({
         timestamp: timestamp,
         source: 'uw',
-        folder: 'signed_uploads',
+        folder: 'signed_upload_demo_uw'
     }, apiSecret);
 
-    return {timestamp, signature}
+    return { timestamp, signature }
 }
 
-module.exports = {signUploadWidget}
-
+module.exports ={ signUploadWidget
+}
+ 
