@@ -56,6 +56,11 @@ header {
   margin: 20px;
 } 
 
+.modal-content {
+    background-image: linear-gradient(to bottom, gray, black); 
+    color: var(--white);
+}
+
 .buttons {
     background-color: var(--gray);
     width: 80px;
