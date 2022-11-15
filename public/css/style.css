@@ -37,8 +37,11 @@ header {
 }
 
 #character-container {
-    background-color: white;
-    color: back;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding-top: 20px;
+    margin: 20px;
+    color: white;
 }
 
 .login-card {
@@ -97,4 +100,18 @@ li {
     width: auto;
     justify-content: space-evenly;
     display: block;
+}
+
+#character-list-image {
+    height: 200px;
+    margin-bottom: 20px;
+    width: auto;
+    display: block;
+    justify-content: space-evenly;
+}
+
+#new-character-button {
+    justify-content: space-evenly;
+    display: block;
+    margin-top: 20px;
 }
