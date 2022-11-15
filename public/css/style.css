@@ -6,39 +6,62 @@
 }
 
 * {
-    /* background-color: var(--black); */
+    box-sizing: border-box;
 }
 
-.title {
+body {
+    background-image: linear-gradient(to bottom, gray, black);
+    background-attachment: fixed;
+}
+
+.logo {
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbar-buttons {
+    justify-content: right;
+}
+
+header {
     color: var(--white);
-    background-color: var(--gray);
     padding: 20px;
     text-align: center;
+    background-color: var(--black);
 }
 
-
-#character-container{
-    background-color: white;
-    color: back;
-}
-
-h1 {
-    background-color: var(--gray);
+#character-container {
+    border: 2px solid white;
+    border-radius: 15px;
+    padding-top: 20px;
+    margin: 20px;
+    color: white;
 }
 
 .login-card {
-  border-style: solid;
-  border-width: 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 400px;
-  border: 3px solid darkgray;
-  padding: 10px;
-  flex: 0 0 300px;
-  background-color: var(--gray);
-  margin: 20px;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    border: 3px solid darkgray;
+    padding: 10px;
+    flex: 0 0 300px;
+    background-color: var(--gray);
+    margin: 20px;
+}
+
+.modal-content {
+    background-image: linear-gradient(to bottom, gray, black);
+    color: var(--white);
 }
 
 .buttons {
@@ -53,9 +76,42 @@ h1 {
 
 .buttons button {
     display: block;
-    margin-bottom:5px;
+    margin-bottom: 5px;
 }
 
-.signup-modal {
-    position: absolute;
+ul {
+    padding-top: 2vh;
+}
+
+li {
+    list-style-type: none;
+    padding: 3vh;
+    text-align: center;
+    border-radius: 15px;
+}
+
+#upload_widget {
+    justify-content: space-evenly;
+    display: block;
+}
+
+#uploadedimage {
+    height: 200px;
+    width: auto;
+    justify-content: space-evenly;
+    display: block;
+}
+
+#character-list-image {
+    height: 200px;
+    margin-bottom: 20px;
+    width: auto;
+    display: block;
+    justify-content: space-evenly;
+}
+
+#new-character-button {
+    justify-content: space-evenly;
+    display: block;
+    margin-top: 20px;
 }

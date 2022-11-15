@@ -39,14 +39,6 @@ Character.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        // abilities_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'abilities',
-        //         key: 'id',
-        //     },
-        // },
         abilities: {
             type: DataTypes.TEXT,
             allowNull: false

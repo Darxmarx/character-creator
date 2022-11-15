@@ -1,37 +1,9 @@
-{{!-- <!DOCTYPE html>
-<html lang="en">
-
-<head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet"
-                href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
-        <title>LéGenesis</title>
-</head> --}}
-
-<div>
-        <header class="navbar title ">
-                
-                <div class="d-flex justify-content-end pr-2">
-                        <button type="button" class="btn btn-light" id="userDshBtn">User Dashboard</button>
-                        <button type="button" class="btn btn-light" id="logoutBtn">logout</button>
-                </div>
-        </header>
-        <div class="container">
-        
-        {{!-- {{#if users.length}} --}}
+<ul class="list-group col-12">
         {{#each userlist as |user|}}
-        <label for="">
-        <a href="/user/{{user.id}}/characters">{{user.name}}</a>
-        </label>
-        <br>
-         {{!-- <label for="user-name">{{user.name}}</label> --}}
-         {{!-- <h1>{{user.name}}</h1> --}}
+        <li>
+                <a href="/user/{{user.id}}/characters" class="list-group-item list-group-item-action list-group-item-dark">
+                        <h1>{{user.name}}</h1>
+                </a>
+        </li>
         {{/each}}
-        {{!-- {{/if}} --}}
-
-        </div>
-</div>
-
+</ul>

@@ -1,39 +1,16 @@
-{{!-- <h2>Login</h2>
+<div class="login-card col-4 offset-4">
 
-<form class="form login-form">
-    <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
+    <div class="row">
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-login-modal">
+            Login
+        </button>
     </div>
-    <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
+
+    <div class="row">
+        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-signup-modal">
+            Sign Up
+        </button>
     </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit" id="login_button">login</button>
-    </div>
-</form> --}}
-
-{{#if logged_in}}
-<div class="logged-in-card">
-    <button type="button" class="btn btn-dark" id="charactersBtn">
-        Your Characters
-    </button>
-
-    <button type="button" class="btn btn-dark" id="allUsersBtn">
-        All Users
-    </button>
-</div>
-{{else}}
-<div class="login-card">
-
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-login-modal">
-        login
-    </button>
-
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-signup-modal">
-        Signup
-    </button>
 
     <div class="login-modal">
 
@@ -55,11 +32,11 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="login-password">Password</label>
-                                    <input type="text" class="form-control" id="password-login" placeholder="Password">
-                                    <div class="form-row">
-                                        <button type="submit" class="btn btn-primary" id="login_button">Login</button>
-                                    </div>
+                                    <input type="password" class="form-control" id="password-login" placeholder="Password">
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-dark" id="login_button">Login</button>
                             </div>
                         </form>
                     </div>
@@ -94,11 +71,11 @@
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="signup-password">Password</label>
-                                    <input type="text" class="form-control" id="password-signup" placeholder="Password">
-                                    <div class="form-row">
-                                        <button type="submit" class="btn btn-primary" id="signup_button">Submit</button>
-                                    </div>
+                                    <input type="password" class="form-control" id="password-signup" placeholder="Password">
                                 </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-dark" id="signup_button">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -107,8 +84,3 @@
         </div>
     </div>
 </div>
-{{/if}}
-
-{{!--
-<script src="../public/js/login.js"></script>
-<script src="../public/js/logout.js"></script> --}}
