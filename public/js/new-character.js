@@ -1,4 +1,4 @@
-const saveCharacter = $('#save-character')
+const saveCharacter = $('#save-character');
 
 // function to save character data as POST request
 const saveCharacterHandler = async (e) => {
@@ -12,14 +12,14 @@ const saveCharacterHandler = async (e) => {
     const alignment = $('#alignments').val();
     const imageLink = $('#uploadedimage').attr('src');
 
-    console.log('button pressed!!!!!!!')
-    console.log(characterName)
-    console.log(physicalDescription)
-    console.log(backstory)
-    console.log(personality)
-    console.log(abilities)
-    console.log(imageLink)
-    console.log(alignment)
+    console.log('button pressed!!!!!!!');
+    console.log(characterName);
+    console.log(physicalDescription);
+    console.log(backstory);
+    console.log(personality);
+    console.log(abilities);
+    console.log(imageLink);
+    console.log(alignment);
 
     if (characterName && physicalDescription && backstory && personality && abilities && imageLink && alignment) {
         const response = await fetch(`/api/character`, {
@@ -40,7 +40,6 @@ const saveCharacterHandler = async (e) => {
 
         console.log(response);
     }
-
     document.location.replace('/user');
 }
 

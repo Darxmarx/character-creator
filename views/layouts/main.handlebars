@@ -18,13 +18,15 @@
             <img class="logo mx-auto" src="/images/LéGenesis-2.png" alt="Logo">
         </div>
 
+        {{#if logged_in}}
         <div class="row navbar-buttons">
             <button type="button" class="btn btn-dark" id="userDshBtn">Community</button>
+
             <button type="button" class="btn btn-dark" id="profileBtn">Profile</button>
-            {{#if logged_in}}
             <button type="button" class="btn btn-dark" id="logoutBtn">Logout</button>
-            {{/if}}
+
         </div>
+        {{/if}}
     </header>
 
     <main class="container justify-content-center">

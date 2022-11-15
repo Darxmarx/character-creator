@@ -6,7 +6,7 @@ const apiSecret = cloudinary.config().api_secret;
 // function used to sign an uploadWidget upload
 const signUploadWidget = () => {
     // get the timestamp and round down
-    const timestamp = Math.round((new Date).getTime()/1000);
+    const timestamp = Math.round((new Date).getTime() / 1000);
 
     const signature = cloudinary.utils.api_sign_request({
         timestamp: timestamp,
@@ -14,9 +14,9 @@ const signUploadWidget = () => {
         folder: 'signed_upload_demo_uw'
     }, apiSecret);
 
-    return { timestamp, signature }
+    return { timestamp, signature };
 }
 
-module.exports ={ signUploadWidget
+module.exports = {
+    signUploadWidget
 }
- 

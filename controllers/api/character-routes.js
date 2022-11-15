@@ -53,6 +53,7 @@ router.post('/', authorizeUser, async (req, res) => {
     }
 });
 
+// TODO: implement feature during free time
 // PUT route that edits a specific character by ID in Character model
 router.put('/:id', authorizeUser, async (req, res) => {
     // update character in the DB based on new information in the req.body, with the requested ID in the url
@@ -76,6 +77,7 @@ router.put('/:id', authorizeUser, async (req, res) => {
     }
 });
 
+// TODO: implement feature during free time
 // DELETE route that deletes specific character by ID in Character model
 router.delete('/:id', authorizeUser, async (req, res) => {
     // delete a character by its "id" value

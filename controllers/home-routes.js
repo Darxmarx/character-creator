@@ -15,7 +15,6 @@ router.get('/', authorizeUser, async (req, res) => {
     }
 });
 
-
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
         res.redirect('/user_list');
@@ -38,7 +37,7 @@ router.get('/characters', (req, res) => {
     try {
         res.render('new-character');
     } catch(err) {
-        res.status(400).json(err);
+        res.status(500).json(err);
     }
 });
 
@@ -58,8 +57,7 @@ router.get('/user', async (req, res) => {
             logged_in: true
         });
     } catch(err) {
-        // res.redirect('/login');
-        res.status(400).json(err);
+        res.status(500).json(err);
     }
 });
 
@@ -92,7 +90,6 @@ router.get('/user/:user_id/characters', async (req, res) => {
                 user_id: req.params.user_id
             },
         });
-
 
         const characterList = userCharacters.map((character) => character.get({ plain: true }));
 
