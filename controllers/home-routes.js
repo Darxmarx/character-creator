@@ -33,7 +33,7 @@ router.get('/signup', (req, res) => {
     res.render('login');
 });
 
-router.get('/characters', (req, res) => {
+router.get('/characters', authorizeUser, (req, res) => {
     try {
         res.render('new-character');
     } catch(err) {
@@ -41,7 +41,7 @@ router.get('/characters', (req, res) => {
     }
 });
 
-router.get('/user', async (req, res) => {
+router.get('/user', authorizeUser, async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
             where: {
@@ -61,7 +61,7 @@ router.get('/user', async (req, res) => {
     }
 });
 
-router.get('/user_list', async (req, res) => {
+router.get('/user_list', authorizeUser, async (req, res) => {
     try {
         const userListData = await User.findAll({
             attributes: { exclude: ['password', 'email'] }
@@ -83,7 +83,7 @@ router.get('/user_list', async (req, res) => {
     }
 });
 
-router.get('/user/:user_id/characters', async (req, res) => {
+router.get('/user/:user_id/characters', authorizeUser, async (req, res) => {
     try {
         const userCharacters = await Character.findAll({
             where: {
