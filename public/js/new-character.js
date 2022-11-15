@@ -1,13 +1,13 @@
 // const e = require("express");
 
-const characterName = $('#characterName').val().trim();
-const physicalDescription = $('#physical_description').val().trim();
-const backstory = $('#backstory').val().trim();
-const personality = $('#personality').val().trim();
-const abilitiesContainer = $('#abilities-container');
-const alignment = $('#alignments').val();
+// const characterName = $('#characterName').val().trim();
+// const physicalDescription = $('#physical_description').val().trim();
+// const backstory = $('#backstory').val().trim();
+// const personality = $('#personality').val().trim();
+// const abilitiesContainer = $('#abilities-container');
+// const alignment = $('#alignments').val();
 const saveCharacter = $('#save-character')
-const imageLink = $('#uploadedimage').attr('src');
+// const imageLink = $('#uploadedimage').attr('src');
 // const allAbiliteisNames = $()
 // const AbilityName = $("#name-ability").val().trim();
 // const description = $("#description-ability").val().trim();
@@ -54,9 +54,10 @@ const saveCharacterHandler = async (e) => {
     const physicalDescription = $('#physical_description').val().trim();
     const backstory = $('#backstory').val().trim();
     const personality = $('#personality').val().trim();
-    const abilitiesContainer = $('#abilities-container');
+    const abilities = $('#abilities').val().trim();
     const alignment = $('#alignments').val();
     const imageLink = $('#uploadedimage').attr('src');
+
 
 
     console.log('button pressed!!!!!!!')
@@ -64,20 +65,12 @@ const saveCharacterHandler = async (e) => {
     console.log(physicalDescription)
     console.log(backstory)
     console.log(personality)
-    console.log(abilitiesContainer)
+    console.log(abilities)
     console.log(imageLink)
     console.log(alignment)
 
 
-    var abil = $('#abilities-container').children();
-    for(a of abil) {
-        console.log('!!!!!!');
-        console.log(a.innerText.split('\n')[0]);
-        console.log(a.innerText.split('\n')[2]);
-        // console.log(a.children().innerText);
-    }
-
-    if (characterName && physicalDescription && backstory && personality && abilitiesContainer && imageLink && alignment) {
+    if (characterName && physicalDescription && backstory && personality && abilities && imageLink && alignment) {
         const response = await fetch(`/api/character`, {
             method: 'POST',
             body: JSON.stringify({
@@ -86,7 +79,8 @@ const saveCharacterHandler = async (e) => {
                 personality: personality,
                 physical_description: physicalDescription,
                 image: imageLink,
-                backstory: backstory
+                backstory: backstory,
+                abilities: abilities
             }),
             headers: {
                 'Content-Type': 'application/json',
