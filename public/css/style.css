@@ -10,7 +10,7 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, gray, black); 
+    background-image: linear-gradient(to bottom, gray, black);
     background-attachment: fixed;
 }
 
@@ -36,28 +36,28 @@ header {
     background-color: var(--black);
 }
 
-#character-container{
+#character-container {
     background-color: white;
     color: back;
 }
 
 .login-card {
-  border-style: solid;
-  border-width: 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 200px;
-  width: 400px;
-  border: 3px solid darkgray;
-  padding: 10px;
-  flex: 0 0 300px;
-  background-color: var(--gray);
-  margin: 20px;
-} 
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 400px;
+    border: 3px solid darkgray;
+    padding: 10px;
+    flex: 0 0 300px;
+    background-color: var(--gray);
+    margin: 20px;
+}
 
 .modal-content {
-    background-image: linear-gradient(to bottom, gray, black); 
+    background-image: linear-gradient(to bottom, gray, black);
     color: var(--white);
 }
 
@@ -73,7 +73,7 @@ header {
 
 .buttons button {
     display: block;
-    margin-bottom:5px;
+    margin-bottom: 5px;
 }
 
 ul {
@@ -85,4 +85,16 @@ li {
     padding: 3vh;
     text-align: center;
     border-radius: 15px;
+}
+
+#upload_widget {
+    justify-content: space-evenly;
+    display: block;
+}
+
+#uploadedimage {
+    height: 200px;
+    width: auto;
+    justify-content: space-evenly;
+    display: block;
 }
