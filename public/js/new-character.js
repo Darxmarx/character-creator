@@ -90,7 +90,7 @@ const saveCharacterHandler = async (e) => {
         console.log(response);
     }
 
-
+    document.location.replace('/user');
 }
 
 // button for creating an ability
