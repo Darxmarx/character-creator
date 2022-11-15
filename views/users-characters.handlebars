@@ -13,8 +13,8 @@
       <div class="carousel-item active" data-interval="10000">
         {{#each characterList as |character|}}
         {{!-- *** TODO: this link might need to change based on img link --}}
-        <label for="character-name">Charater name: {{character.name}}</label>
-        <img src="/api/character/{{character.id}}" class="d-block w-100" alt="character-image">
+        <label for="character-name">Character name: {{character.name}}</label>
+        <img src="{{character.image}}" class="d-block w-100" alt="character-image">
         {{!-- show character's description *** TODO: do we need all these info to display under character's img --}}
         <label for="character-description">description:</label>
         {{!-- <textarea class="form-input" id="character-description" name="character-description">

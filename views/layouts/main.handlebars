@@ -14,9 +14,14 @@
 <body>
     <header class="title">
         <h1>LéGenesis</h1>
+        <button type="button" class="btn btn-light" id="userDshBtn">Community</button>
+        <button type="button" class="btn btn-light" id="profileBtn">Profile</button>
+        {{#if logged_in}}
+        <button type="button" class="btn btn-light" id="logoutBtn">logout</button>
+        {{/if}}
     </header>
     <div>
-        <img src="../../public/images/LéGenesis-2.png" alt="Logo">
+        <img src="./images/LéGenesis-2.png" alt="Logo">
     </div>
     {{!-- {{#if logged_in}}
     <div class="logged-in-card">
@@ -126,6 +131,7 @@
 
     <script src="./js/login.js"></script>
     <script src="./js/logout.js"></script>
+    <script src="./js/nav.js"></script>
     <script src="./js/new-character.js"></script>
 
 </body>

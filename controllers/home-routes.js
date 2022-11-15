@@ -18,15 +18,15 @@ router.get('/', authorizeUser, async (req, res) => {
     try {
 
 
-        const userData = await User.findAll({
-            include: [
-                {
-                    attributes: ['name'],
-                }
-            ]
-        })
+        // const userData = await User.findAll({
+        //     include: [
+        //         {
+        //             attributes: ['name'],
+        //         }
+        //     ]
+        // })
 
-        const users = userData.map((user) => user.get({ plain: true }));
+        // const users = userData.map((user) => user.get({ plain: true }));
 
         // console.log(user);
 
@@ -39,9 +39,10 @@ router.get('/', authorizeUser, async (req, res) => {
         // res.render('users')
 
         if (req.session.logged_in) {
-            res.redirect('/user');
+            res.redirect('/user_list');
             return;
         }
+
     } catch (err) {
         res.status(500).json(err);
     }
@@ -50,7 +51,7 @@ router.get('/', authorizeUser, async (req, res) => {
 
 router.get('/login', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/user');
+        res.redirect('/user_list');
         return;
     }
 
@@ -59,7 +60,7 @@ router.get('/login', (req, res) => {
 
 router.get('/signup', (req, res) => {
     if (req.session.logged_in) {
-        res.redirect('/user');
+        res.redirect('/user_list');
         return;
     }
 
@@ -67,11 +68,34 @@ router.get('/signup', (req, res) => {
 })
 
 router.get('/characters', (req, res) => {
-    res.render('new-character');
+    try {
+        res.render('new-character');
+    } catch(err) {
+        res.status(400).json(err);
+    }
 })
 
-router.get('/user', (req, res) => {
-    res.render('users')
+router.get('/user', async (req, res) => {
+    try {
+        const userCharacters = await Character.findAll({
+            where: {
+                user_id: req.session.user_id
+            },
+
+        })
+
+
+        const characterList = userCharacters.map((character) => character.get({ plain: true }));
+
+        res.render('users-characters', {
+            characterList,
+            logged_in: true
+        })
+    } catch(err) {
+        // res.redirect('/login');
+        res.status(400).json(err);
+    }
+
 })
 
 router.get('/user_list', async (req, res) => {
@@ -79,7 +103,7 @@ router.get('/user_list', async (req, res) => {
 
         const userListData = await User.findAll({
             // attributes: ["id", "name"]
-            attributes: {exclude: ['password', 'email']}
+            attributes: { exclude: ['password', 'email'] }
         })
 
         console.log(userListData);
@@ -117,7 +141,7 @@ router.get('/user/:user_id/characters', async (req, res) => {
             logged_in: true
         })
 
-    } catch(err) {
+    } catch (err) {
 
     }
 })
