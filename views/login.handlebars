@@ -1,39 +1,16 @@
-{{!-- <h2>Login</h2>
+<div class="login-card col-4 offset-4">
 
-<form class="form login-form">
-    <div class="form-group">
-        <label for="email-login">email:</label>
-        <input class="form-input" type="text" id="email-login" />
-    </div>
-    <div class="form-group">
-        <label for="password-login">password:</label>
-        <input class="form-input" type="password" id="password-login" />
-    </div>
-    <div class="form-group">
-        <button class="btn btn-primary" type="submit" id="login_button">login</button>
-    </div>
-</form> --}}
-
-{{#if logged_in}}
-<div class="logged-in-card">
-    <button type="button" class="btn btn-dark" id="charactersBtn">
-        Your Characters
-    </button>
-
-    <button type="button" class="btn btn-dark" id="allUsersBtn">
-        All Users
-    </button>
-</div>
-{{else}}
-<div class="login-card">
-
+    <div class="row">
     <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-login-modal">
-        login
+        Login
     </button>
+    </div>
 
+    <div class="row">
     <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-signup-modal">
-        Signup
+        Sign Up
     </button>
+    </div>
 
     <div class="login-modal">
 
@@ -107,8 +84,3 @@
         </div>
     </div>
 </div>
-{{/if}}
-
-{{!--
-<script src="../public/js/login.js"></script>
-<script src="../public/js/logout.js"></script> --}}

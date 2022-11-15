@@ -5,8 +5,13 @@
     --red: red;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background-image: linear-gradient(to bottom, gray, black);
+    background-image: linear-gradient(to bottom, gray, black); 
+    background-attachment: fixed;
 }
 
 .logo {
@@ -14,10 +19,6 @@ body {
     justify-content: center;
     align-items: center;
 }
-
-/* .jumbotron-fluid {
-    background-color: var(--black);
-} */
 
 .btn {
     margin-left: 20px;
@@ -40,10 +41,6 @@ header {
     color: back;
 }
 
-h1 {
-    background-color: var(--gray);
-}
-
 .login-card {
   border-style: solid;
   border-width: 1px;
@@ -57,7 +54,7 @@ h1 {
   flex: 0 0 300px;
   background-color: var(--gray);
   margin: 20px;
-}
+} 
 
 .buttons {
     background-color: var(--gray);
@@ -72,8 +69,4 @@ h1 {
 .buttons button {
     display: block;
     margin-bottom:5px;
-}
-
-.signup-modal {
-    position: absolute;
 }
