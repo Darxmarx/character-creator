@@ -14,37 +14,37 @@ const imageLink = $('#uploadedimage').attr('src');
 
 
 // function to append ability name and desc to page
-const newAbilityHandler = (e) => {
-    e.preventDefault();
+// const newAbilityHandler = (e) => {
+//     e.preventDefault();
 
 
 
-    console.log('button pressed!!!!!!!')
-    console.log(characterName)
-    console.log(physicalDescription)
-    console.log(backstory)
-    console.log(personality)
-    console.log(abilitiesContainer)
-    console.log(imageLink)
-    console.log(alignment)
+//     console.log('button pressed!!!!!!!')
+//     console.log(characterName)
+//     console.log(physicalDescription)
+//     console.log(backstory)
+//     console.log(personality)
+//     console.log(abilitiesContainer)
+//     console.log(imageLink)
+//     console.log(alignment)
 
-    console.log("ability handler reporting in");
+//     console.log("ability handler reporting in");
 
-    // collect values from ability form
-    // const name = $("#name-ability").val().trim();
-    // const description = $("#description-ability").val().trim();
-    const AbilityName = $("#name-ability").val().trim();
-    const description = $("#description-ability").val().trim();
+//     // collect values from ability form
+//     // const name = $("#name-ability").val().trim();
+//     // const description = $("#description-ability").val().trim();
+//     const AbilityName = $("#name-ability").val().trim();
+//     const description = $("#description-ability").val().trim();
 
-    // contains both valid name and description
-    if (AbilityName && description) {
-        let newAbilityName = $("<label>").text(AbilityName);
-        let newAbilityDescription = $("<p>").text(description);
+//     // contains both valid name and description
+//     if (AbilityName && description) {
+//         let newAbilityName = $("<label>").text(AbilityName);
+//         let newAbilityDescription = $("<p>").text(description);
 
-        abilitiesContainer.append(newAbilityName);
-        newAbilityName.append(newAbilityDescription);
-    }
-}
+//         abilitiesContainer.append(newAbilityName);
+//         newAbilityName.append(newAbilityDescription);
+//     }
+// }
 
 // function to save character data as POST request
 const saveCharacterHandler = async (e) => {
@@ -68,6 +68,15 @@ const saveCharacterHandler = async (e) => {
     console.log(imageLink)
     console.log(alignment)
 
+
+    var abil = $('#abilities-container').children();
+    for(a of abil) {
+        console.log('!!!!!!');
+        console.log(a.innerText.split('\n')[0]);
+        console.log(a.innerText.split('\n')[2]);
+        // console.log(a.children().innerText);
+    }
+
     if (characterName && physicalDescription && backstory && personality && abilitiesContainer && imageLink && alignment) {
         const response = await fetch(`/api/character`, {
             method: 'POST',
@@ -85,20 +94,13 @@ const saveCharacterHandler = async (e) => {
         });
 
         console.log(response);
-
-        const abilitiesResponse = await fetch('api/abilities', {
-            method: 'POST',
-            body: JSON.stringify({ AbilityName, description})
-        })
-
-        if (response.ok && abilitiesResponse.ok) {
-            console.log('ok@@@@@@@@@@@@')
-        }
     }
+
+
 }
 
 // button for creating an ability
-$('#save-ability-button').on('click', newAbilityHandler);
+// $('#save-ability-button').on('click', newAbilityHandler);
 
 // button for saving all new character info to the DB
 saveCharacter.on('click', saveCharacterHandler);

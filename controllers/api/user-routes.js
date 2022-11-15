@@ -1,6 +1,6 @@
 // set up router and models required
 const router = require('express').Router();
-const { User, Character, Abilities } = require('../../models');
+const { User, Character } = require('../../models');
 
 // POST route that creates new user for the User model
 router.post('/', async (req, res) => {

@@ -31,9 +31,7 @@
         <p>Personality: {{character.personality}}</p>
         <p>Physical: {{character.physical_description}}</p>
         <p>Back Story: {{character.backstory}}</p>
-        <p>Abilities: {{#each character.abilities as |abilities|}}
-          {{abilities.name}}
-          {{/each}}</p>
+        <p>Abilities: {{character.abilities}}</p>
         {{/each}}
       </div>
     </div>

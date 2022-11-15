@@ -1,6 +1,6 @@
 // set up router, models, and authorizeUser middleware
 const router = require('express').Router();
-const { User, Character, Abilities } = require('../models');
+const { User, Character } = require('../models');
 const authorizeUser = require('../utils/auth');
 
 // TODO: commented out for now, please continue
@@ -106,11 +106,7 @@ router.get('/user/:user_id/characters', async (req, res) => {
             where: {
                 user_id: req.params.user_id
             },
-            include: [
-                {
-                    model: Abilities
-                }
-            ]
+
         })
 
 
