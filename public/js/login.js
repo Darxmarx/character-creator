@@ -1,5 +1,4 @@
 // login handler
-
 const loginFormHandler = async (e) => {
     e.preventDefault();
 
@@ -7,7 +6,7 @@ const loginFormHandler = async (e) => {
     const email = $("#email-login").val().trim();
     const password = $("#password-login").val().trim();
 
-    if(email && password) {
+    if (email && password) {
         // send a POST request to the API endpoint
         const response = await fetch('/api/user/login', {
             method: 'POST',
@@ -15,17 +14,16 @@ const loginFormHandler = async (e) => {
             headers: { 'Content-Type': 'application/json' },
         });
 
-        if(response.ok) {
+        if (response.ok) {
             // if successful, redirect the browser to the homepage
             document.location.replace('/user_list');
         } else {
-            alert(`Failed to login, please try again!`,response.statusText);
+            alert(`Failed to login, please try again!`, response.statusText);
         }
     }
-};
+}
 
 // signup handler to create a new user account
-
 const signupFormHandler = async (e) => {
     e.preventDefault();
 
@@ -34,15 +32,15 @@ const signupFormHandler = async (e) => {
     const email = $("#email-signup").val().trim();
     const password = $("#password-signup").val().trim();
 
-    if(name && email && password) {
+    if (name && email && password) {
         // send a POST request to API
         const response = await fetch('/api/user', {
             method: 'POST',
             body: JSON.stringify({ name, email, password }),
             headers: { 'Content-Type': 'application/json' },
-        }) 
+        })
 
-        if(response.ok) {
+        if (response.ok) {
             // if successful, redirect the browser to homepage
             document.location.replace('/user_list');
         } else {

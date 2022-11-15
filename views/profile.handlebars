@@ -1,0 +1,21 @@
+<div class="col-4 offset-4">
+  <a class="btn btn-dark mx-auto" href="/characters" id="new-character-button">New Character</a>
+</div>
+
+{{#if characterList.length}}
+{{#each characterList as |character|}}
+<div class="container" id="character-container">
+
+  <img src="{{character.image}}" alt="character-image" class="mx-auto" id="character-list-image">
+
+  <p>Character: {{character.name}}</p>
+  <p>Alignment: {{character.alignment}}</p>
+  <p>Personality: {{character.personality}}</p>
+  <p>Physical: {{character.physical_description}}</p>
+  <p>Back Story: {{character.backstory}}</p>
+  <p>Abilities: {{character.abilities}}</p>
+
+</div>
+
+{{/each}}
+{{/if}}
