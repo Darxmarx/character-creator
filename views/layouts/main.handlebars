@@ -12,21 +12,26 @@
 </head>
 
 <body>
-    <header class="title">
-        <h1>LéGenesis</h1>
-        <button type="button" class="btn btn-light" id="userDshBtn">Community</button>
-        <button type="button" class="btn btn-light" id="profileBtn">Profile</button>
-        {{#if logged_in}}
-        <button type="button" class="btn btn-light" id="logoutBtn">Logout</button>
-        {{/if}}
-    </header>
-    <div>
-        <img src="/images/LéGenesis-2.png" alt="Logo">
-    </div>
+    <header>
+        <div class="row">
+        <img class="logo mx-auto" src="/images/LéGenesis-2.png" alt="Logo">
+        </div>
 
-    <div>
+        <div class="row navbar-buttons">
+        <button type="button" class="btn btn-dark" id="userDshBtn">Community</button>
+        <button type="button" class="btn btn-dark" id="profileBtn">Profile</button>
+        {{#if logged_in}}
+        <button type="button" class="btn btn-dark" id="logoutBtn">Logout</button>
+        {{/if}}
+        </div>
+    </header>
+    {{!-- <div>
+        <img src="/images/LéGenesis-2.png" alt="Logo">
+    </div> --}}
+
+
     {{{body}}}
-    </div>
+   
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>

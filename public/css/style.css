@@ -5,17 +5,35 @@
     --red: red;
 }
 
-* {
-    /* background-image: linear-gradient(to bottom, gray, black) */
+body {
+    background-image: linear-gradient(to bottom, gray, black);
 }
 
-.title {
+.logo {
+    height: 200px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .jumbotron-fluid {
+    background-color: var(--black);
+} */
+
+.btn {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.navbar-buttons {
+    justify-content: right;
+}
+
+header {
     color: var(--white);
-    background-color: var(--gray);
     padding: 20px;
     text-align: center;
+    background-color: var(--black);
 }
-
 
 #character-container{
     background-color: white;
