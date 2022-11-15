@@ -75,3 +75,14 @@ header {
     display: block;
     margin-bottom:5px;
 }
+
+ul {
+    padding-top: 2vh;
+}
+
+li {
+    list-style-type: none;
+    padding: 3vh;
+    text-align: center;
+    border-radius: 15px;
+}
