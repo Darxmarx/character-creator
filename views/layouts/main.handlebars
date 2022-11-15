@@ -17,123 +17,23 @@
         <button type="button" class="btn btn-light" id="userDshBtn">Community</button>
         <button type="button" class="btn btn-light" id="profileBtn">Profile</button>
         {{#if logged_in}}
-        <button type="button" class="btn btn-light" id="logoutBtn">logout</button>
+        <button type="button" class="btn btn-light" id="logoutBtn">Logout</button>
         {{/if}}
     </header>
     <div>
         <img src="/images/LéGenesis-2.png" alt="Logo">
     </div>
-    {{!-- {{#if logged_in}}
-    <div class="logged-in-card">
-        <button type="button" class="btn btn-dark" id="charactersBtn">
-            Your Characters
-        </button>
 
-        <button type="button" class="btn btn-dark" id="allUsersBtn">
-            All Users
-        </button>
-    </div>
-    {{#else}}
-    <div class="login-card">
-
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-login-modal">
-            login
-        </button>
-
-        <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#add-signup-modal">
-            Signup
-        </button>
-
-        <div class="login-modal">
-
-            <div class="modal fade" id="add-login-modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="LoginModalLabel">Login</h5>
-                        </div>
-                        <div class="modal-body">
-                            <form id="login-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="login-email">Email</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Email">
-                                    </div>
-
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="login-password">Password</label>
-                                        <input type="text" class="form-control" id="password" placeholder="Password">
-                                        <div class="form-row">
-                                            <button type="submit" class="btn btn-primary">Login</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-
-
-        </div>
-
-        <div class="signup-modal">
-
-
-
-            <div class="modal fade" id="add-signup-modal" tabindex="-1" role="dialog">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="SignupModalLabel">Sign Up</h5>
-                        </div>
-                        <div class="modal-body">
-                            <form id="signup-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="signup-email">Email</label>
-                                        <input type="text" class="form-control" id="email" placeholder="Email">
-                                    </div>
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label for="signup-password">Password</label>
-                                        <input type="text" class="form-control" id="password" placeholder="Password">
-                                        <div class="form-row">
-                                            <button type="submit" class="btn btn-primary">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/if}} --}}
-
+    <div>
     {{{body}}}
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
-
-    <!-- cloudinary upload widget -->
-    {{!-- <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script> --}}
-
-    <!-- local upload instantiation -->
-    {{!-- <script src="./js/upload_event.js" type="text/javascript"></script> --}}
-
     <script src="/js/login.js"></script>
     <script src="/js/logout.js"></script>
     <script src="/js/nav.js"></script>
     <script src="/js/new-character.js"></script>
-
 </body>
 
 </html>

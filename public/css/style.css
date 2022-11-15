@@ -6,7 +6,7 @@
 }
 
 * {
-    /* background-color: var(--black); */
+    /* background-image: linear-gradient(to bottom, gray, black) */
 }
 
 .title {
