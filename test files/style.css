@@ -53,3 +53,8 @@ h1 {
 .signup-modal {
     position: absolute;
 }
+
+body {
+    background-color: black;
+    color: white;
+}

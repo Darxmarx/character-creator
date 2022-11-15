@@ -1,63 +1,115 @@
-
-<input for="character-name" class="form-lable" id="characterName">Character Name: </input>
+<label for="character-name">Character Name: </label>
+<input for="character-name" class="form-lable" id="characterName"></input>
 
 
 {{!-- *** TODO: upload image for character, need link with cloudinary and adjust html layout--}}
 <div class="card" style="width: 18rem;">
-    {{!-- *** TODO: preview character image, need link --}}
+  {{!-- *** TODO: preview character image, need link --}}
   <img src="TODO" class="card-img-top" alt="character-image-preview">
   <div class="card-body">
     {{!-- upload label and button --}}
-        <div class="input-group mb-3">
-        <div class="input-group-prepend">
-            <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon03">Upload</button>
-        </div>
-        <div class="custom-file">
-            <input type="file" class="custom-file-input" id="inputGroupFile03" aria-describedby="inputGroupFileAddon03">
-            <label class="custom-file-label" for="inputGroupFile03">Choose image</label>
-        </div>
-        </div>
+    <div>
+      <button id="upload_widget">Upload Image</button>
+    </div>
+    <div><img id="uploadedimage" /></div>
 
   </div>
 </div>
 
 
 {{!-- dropdown menu for alignment --}}
-<label for="alignments">Choose a alignment:</label>
+<label for="alignments">Choose an alignment:</label>
 
 <select name="alignments" id="alignments">
-    <option value="alignment1">alignment1</option>
-    <option value="alignment2">alignment2</option>
-    <option value="alignment3">alignment3</option>
-    <option value="alignment4">alignment4</option>
-    <option value="alignment5">alignment5</option>
+  <option value="True Neutral">True Neutral</option>
+  <option value="Chaotic Neutral">Chaotic Neutral</option>
+  <option value="Lawful Neutral">Lawful Neutral</option>
+  <option value="Lawful Good">Lawful Good</option>
+  <option value="Lawful Evil">Lawful Evil</option>
+  <option value="Chaotic Good<">Chaotic Good</option>
+  <option value="Chaotic Evil">Chaotic Evil</option>
+  <option value="Chaotic Neutral">Chaotic Neutral</option>
+  <option value="Neutral Good<">Neutral Good</option>
+
 </select>
 
 
-{{!-- *** TODO :abilities --}}
 
 
-
-{{!--  *** TODO : textarea for Character description/backstory, combine?  --}}
+{{!-- *** TODO : textarea for Character description/backstory, combine? --}}
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">physical_description</span>
+    <span class="input-group-text">Physical Description</span>
   </div>
-  <textarea class="form-control" aria-label="physical_description" id="physical_description"></textarea>
+  <textarea class="form-control" aria-label="physical_description" id="physical_description"
+    placeholder="Add in a description of the character's physical appearance and traits."></textarea>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">backstory</span>
+    <span class="input-group-text">Backstory</span>
   </div>
-  <textarea class="form-control" aria-label="backstory" id="backstory"></textarea>
+  <textarea class="form-control" aria-label="backstory" id="backstory"
+    placeholder="Add in details about the character's backstory."></textarea>
 </div>
 <div class="input-group">
   <div class="input-group-prepend">
-    <span class="input-group-text">personality</span>
+    <span class="input-group-text">Personality</span>
   </div>
-  <textarea class="form-control" aria-label="personality" id="personality"></textarea>
+  <textarea class="form-control" aria-label="personality" id="personality"
+    placeholder="Add in details about the character's personality."></textarea>
 </div>
 
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Abilities</span>
+  </div>
+  <textarea class="form-control" aria-label="abilities" id="abilities"
+    placeholder="List all notable abilities your character has."></textarea>
 
-{{!-- *** TODO : save button, need to link to public --}}
-<button type="button" class="btn btn-secondary btn-lg btn-block" id="save-character">Save Character</button>
+</div>
+
+{{!-- <div id="abilities-container"></div> --}}
+
+{{!-- <div class="ability-modal">
+  <div class="modal fade" id="add-ability-modal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="AbilityModalLabel">New Ability</h5>
+        </div>
+        <div class="modal-body">
+          <form id="ability-form">
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ability-name">Ability Name</label>
+                <input type="text" class="form-control" id="name-ability" placeholder="Ability Name">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="ability-description">Ability Description</label>
+                <input type="text" class="form-control" id="description-ability" placeholder="Ability's Description">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <button type="button" class="btn btn-primary" id="save-ability-button" data-dismiss="modal">Save</button>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> --}}
+
+{{!-- <button type="button" class="btn" data-toggle="modal" data-target="#add-ability-modal" id="new-ability-btn">Add another Ability</button> --}}
+
+
+
+{{!--
+
+for(i = 0, i < abilities.length){ render a text area of } --}} {{!-- *** TODO : save button, need to link to public --}}
+  <button type="button" class="btn btn-secondary btn-lg btn-block" id="save-character">Save Character</button>

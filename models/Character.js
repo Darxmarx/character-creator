@@ -25,24 +25,31 @@ Character.init(
         },
         personality: {
             type: DataTypes.STRING,
+            allowNull: false,
         },
         physical_description: {
             type: DataTypes.TEXT,
+            allowNull: false,
         },
         image: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
+            allowNull: false,
         },
         backstory: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        abilities_id: {
-            type: DataTypes.INTEGER,
-            allowNull: false,
-            references: {
-                model: 'abilities',
-                key: 'id',
-            },
+        // abilities_id: {
+        //     type: DataTypes.INTEGER,
+        //     allowNull: false,
+        //     references: {
+        //         model: 'abilities',
+        //         key: 'id',
+        //     },
+        // },
+        abilities: {
+            type: DataTypes.TEXT,
+            allowNull: false
         },
         user_id: {
             type: DataTypes.INTEGER,

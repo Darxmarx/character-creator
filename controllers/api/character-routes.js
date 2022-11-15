@@ -1,6 +1,6 @@
 // set up router, models required, and authorizeUser
 const router = require('express').Router();
-const { User, Character, Abilities } = require('../../models');
+const { User, Character } = require('../../models');
 const authorizeUser = require('../../utils/auth');
 
 // GET route that retrieves all characters
@@ -8,7 +8,6 @@ router.get('/', authorizeUser, async (req, res) => {
     try {
         // finds all sets of data in the Character model, making sure to include abilities data from the Abilities model
         const charData = await Character.findAll({
-            include: [{ model: Abilities }]
         });
 
         // return status 200 upon successful retrieval
@@ -23,7 +22,6 @@ router.get('/:id', authorizeUser, async (req, res) => {
     try {
         // finds set of data in Character model by ID, including that character's abilities stored in the Abilities model
         const charData = await Character.findByPk(req.params.id, {
-            include: [{ model: Abilities }]
         });
 
         // if character data doesn't exist, return error

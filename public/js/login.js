@@ -5,7 +5,7 @@ const loginFormHandler = async (e) => {
 
     // collect values from the login form
     const email = $("#email-login").val().trim();
-    const password = $("password-login").val().trim();
+    const password = $("#password-login").val().trim();
 
     if(email && password) {
         // send a POST request to the API endpoint
@@ -17,7 +17,7 @@ const loginFormHandler = async (e) => {
 
         if(response.ok) {
             // if successful, redirect the browser to the homepage
-            document.location.replace('/');
+            document.location.replace('/user_list');
         } else {
             alert(`Failed to login, please try again!`,response.statusText);
         }
@@ -44,12 +44,12 @@ const signupFormHandler = async (e) => {
 
         if(response.ok) {
             // if successful, redirect the browser to homepage
-            document.location.replace('/');
+            document.location.replace('/user_list');
         } else {
             alert(`Please enter correct info to sign up!`, response.statusText);
         }
     }
 };
 
-$('.login-form').on('submit', loginFormHandler);
-$('.signup-form').on('submit', signupFormHandler);
+$('#login_button').on('click', loginFormHandler);
+$('#signup_button').on('click', signupFormHandler);
